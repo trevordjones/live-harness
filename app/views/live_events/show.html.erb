@@ -1,0 +1,7 @@
+<h2><%= @live_event['title'] %></h2>
+<p><%= link_to 'Edit', edit_live_event_path(@live_event['_id']) %></p>
+<p><%= @live_event['encoder_name'] %></p>
+<p><%= @live_event['active'] %></p>
+<p><%= @live_event['player_embed'] %></p>
+
+<%= @live_event['player_embed'].html_safe %>

@@ -1,0 +1,5 @@
+<% @encoders.each do |encoder| %>
+  <h1><%= encoder['encoder_name'] %></h1>
+  <h2><%= encoder['fqdn'] %></h2>
+  <%= encoder %>
+<% end %>

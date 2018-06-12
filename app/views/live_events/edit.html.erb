@@ -1,0 +1,6 @@
+<h3><%= link_to @live_event['title'], live_event_path(@live_event['_id']) %></h3>
+<div class="col-sm-6">
+  <%= form_tag("/live_events/#{@live_event['_id']}", method: :put) do %>
+    <%= render partial: 'form', locals: { live_event: @live_event } %>
+  <% end %>
+</div>

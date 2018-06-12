@@ -1,0 +1,71 @@
+<div class="form-group">
+  <%= label_tag :encoder_name %>
+  <%= text_field_tag :encoder_name, live_event['encoder_name'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :title %>
+  <%= text_field_tag :title, live_event['title'], class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= label_tag :description %>
+  <%= text_field_tag :description, live_event['description'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :event_type %>
+  <%= text_field_tag :event_type, live_event['event_type'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :dvr_duration %>
+  <%= text_field_tag :dvr_duration, live_event['dvr_duration'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :on_air_at %>
+  <div class="input-group date">
+    <%= text_field_tag :on_air_at, live_event['on_air_at'], class: 'form-control', id: 'on_air' %>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :off_air_at %>
+  <div class="input-group date">
+    <%= text_field_tag :off_air_at, live_event['off_air_at'], class: 'form-control', id: 'off_air' %>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag :monetization_type, live_event['monetization_type'] %>
+  <%= select_tag :monetization_type, options_for_select(%i(free subscription_required pass_required purchase_required rental_required)), class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :rental_duration %>
+  <%= text_field_tag :rental_duration, live_event['rental_duration'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :rental_price %>
+  <%= text_field_tag :rental_price, live_event['rental_price'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :purchase_price %>
+  <%= text_field_tag :purchase_price, live_event['purchase_price'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :auto_archive %>
+  <%= select_tag :auto_archive, options_for_select(%i(true false), live_event['auto_archive']), class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :auto_manage_encoder %>
+  <%= select_tag :auto_manage_encoder, options_for_select(%i(true false), live_event['auto_manage_encoder']), class: 'form-control' %>
+</div>
+<%= submit_tag('Save', class: 'btn btn-success') %>
+
+<script type="text/javascript">
+  $(function() {
+    $('#on_air').datetimepicker();
+    $('#off_air').datetimepicker();
+  })
+</script>

@@ -1,0 +1,3 @@
+<% @live_events.each do |live_event| %>
+  <h2><%= link_to(live_event['title'], live_event_path(live_event['_id'])) %></h2>
+<% end %>
